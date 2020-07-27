@@ -60,7 +60,7 @@ class AcademicTermForm extends ContentEntityForm {
           '%label' => $entity->label(),
         ]));
     }
-    $form_state->setRedirect('entity.term.canonical', ['term' => $entity->id()]);
+    $form_state->setRedirect('entity.academic_term.canonical', ['academic_term' => $entity->id()]);
   }
 
 }

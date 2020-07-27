@@ -30,7 +30,7 @@ class AcademicTermListBuilder extends EntityListBuilder {
     $row['id'] = $entity->id();
     $row['label'] = Link::createFromRoute(
       $entity->label(),
-      'entity.term.edit_form',
+      'entity.academic_term.edit_form',
       ['academic_term' => $entity->id()]
     );
     return $row + parent::buildRow($entity);

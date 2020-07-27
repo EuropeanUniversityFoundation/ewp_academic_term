@@ -1,12 +1,11 @@
-uuid: 553cbb7c-7129-4a81-92c9-186e250198f2
 langcode: en
 status: true
 dependencies:
   module:
     - datetime
     - ewp_academic_term
-id: academic_term.start_date
-field_name: start_date
+id: academic_term.end_date
+field_name: end_date
 entity_type: academic_term
 type: datetime
 settings:

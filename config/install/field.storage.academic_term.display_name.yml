@@ -1,19 +1,18 @@
-uuid: 2d023c38-4fc0-4dc6-8914-38469059abfe
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - ewp_academic_term
-id: academic_term.end_date
-field_name: end_date
+    - ewp_core
+id: academic_term.display_name
+field_name: display_name
 entity_type: academic_term
-type: datetime
+type: ewp_string_lang
 settings:
-  datetime_type: date
-module: datetime
+  max_length: '255'
+module: ewp_core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
