@@ -49,7 +49,8 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *     "delete-form" = "/admin/ewp/academic_term/{academic_term}/delete",
  *     "collection" = "/admin/ewp/academic_term/list",
  *   },
- *   field_ui_base_route = "academic_term.settings"
+ *   field_ui_base_route = "academic_term.settings",
+ *   common_reference_target = TRUE,
  * )
  */
 class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
