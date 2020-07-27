@@ -106,7 +106,7 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'hidden',
         'type' => 'string',
         'weight' => -20,
       ])
@@ -116,6 +116,58 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
+
+    $fields['academic_year_id'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Academic Year ID'))
+      ->setDescription(t('A global identifier of an academic year.<br />Example: 1999/2000'))
+      ->setSettings([
+        'max_length' => 9,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -19,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -19,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setPropertyConstraints('value', [
+           'Regex' => [
+             'pattern' => '/[0-9]{4}\/[0-9]{4}/',
+             'message' => 'Allowed format is 1999/2000',
+           ]])
+      ->setRequired(TRUE);
+
+    $fields['ewp_academic_term_id'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('EWP Academic Term ID'))
+      ->setDescription(t('Format as AcademicYearId-TermNumber/NumberOfTerms.<br />Example: 1999/2000-1/2'))
+      ->setSettings([
+        'max_length' => 13,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -18,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -18,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setPropertyConstraints('value', [
+           'Regex' => [
+             'pattern' => '/[0-9]{4}\/[0-9]{4}\-[1-9]\/[1-9]/',
+             'message' => 'Allowed format is 1999/2000-1/2',
+           ]])
       ->setRequired(TRUE);
 
     $fields['status']

@@ -1,4 +1,7 @@
 {
+  "name": "ewp_academic_term",
+  "type": "drupal-module",
+  "description": "Drupal implementation of the EWP Academic Term Type",
   "keywords": [
   ],
   "homepage": "",
@@ -14,6 +17,6 @@
     }
   ],
   "require": {
-    "euf/ewp_core": "dev-master",
+    "euf/ewp_core": "dev-master"
   }
 }

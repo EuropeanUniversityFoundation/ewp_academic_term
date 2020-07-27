@@ -1,0 +1,7 @@
+ewp_academic_term.admin:
+  path: '/admin/ewp/academic_term'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'EWP Academic Term'
+  requirements:
+    _permission: 'administer academic term entities'
