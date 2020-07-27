@@ -1,0 +1,68 @@
+uuid: 373463a5-63ff-415e-a317-beb305b2cb3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.academic_term.academic_term.display_name
+    - field.field.academic_term.academic_term.end_date
+    - field.field.academic_term.academic_term.start_date
+  module:
+    - datetime
+    - ewp_academic_term
+    - ewp_core
+id: academic_term.academic_term.default
+targetEntityType: academic_term
+bundle: academic_term
+mode: default
+content:
+  academic_year_id:
+    label: above
+    type: string
+    weight: -19
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  ewp_academic_term_id:
+    label: above
+    type: string
+    weight: -18
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  display_name:
+    weight: -15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: ewp_string_lang_default
+    region: content
+  end_date:
+    weight: -16
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  start_date:
+    weight: -17
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  label:
+    label: hidden
+    type: string
+    weight: -20
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true

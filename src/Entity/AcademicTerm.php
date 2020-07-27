@@ -120,7 +120,7 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
 
     $fields['academic_year_id'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Academic Year ID'))
-      ->setDescription(t('A global identifier of an academic year.<br />Example: 1999/2000'))
+      ->setDescription(t('A global identifier of an academic year.<br />Example: 2010/2011'))
       ->setSettings([
         'max_length' => 9,
         'text_processing' => 0,
@@ -140,13 +140,13 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
       ->setPropertyConstraints('value', [
            'Regex' => [
              'pattern' => '/[0-9]{4}\/[0-9]{4}/',
-             'message' => 'Allowed format is 1999/2000',
+             'message' => 'Allowed format is 2010/2011',
            ]])
       ->setRequired(TRUE);
 
     $fields['ewp_academic_term_id'] = BaseFieldDefinition::create('string')
       ->setLabel(t('EWP Academic Term ID'))
-      ->setDescription(t('Format as AcademicYearId-TermNumber/NumberOfTerms.<br />Example: 1999/2000-1/2'))
+      ->setDescription(t('Format as AcademicYearId-TermNumber/NumberOfTerms.<br />Example: 2010/2011-1/2'))
       ->setSettings([
         'max_length' => 13,
         'text_processing' => 0,
@@ -166,9 +166,8 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
       ->setPropertyConstraints('value', [
            'Regex' => [
              'pattern' => '/[0-9]{4}\/[0-9]{4}\-[1-9]\/[1-9]/',
-             'message' => 'Allowed format is 1999/2000-1/2',
-           ]])
-      ->setRequired(TRUE);
+             'message' => 'Allowed format is 2010/2011-1/2',
+           ]]);
 
     $fields['status']
       ->setDisplayOptions('form', [

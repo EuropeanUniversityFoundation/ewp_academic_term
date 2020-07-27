@@ -1,0 +1,21 @@
+uuid: 43e95622-c30c-46e0-ab0c-62839356ace8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.academic_term.start_date
+  module:
+    - datetime
+    - ewp_academic_term
+id: academic_term.academic_term.start_date
+field_name: start_date
+entity_type: academic_term
+bundle: academic_term
+label: 'Start date'
+description: 'First day of this term (inclusive).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

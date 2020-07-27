@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.academic_term.academic_term.display_name
+    - field.field.academic_term.academic_term.end_date
+    - field.field.academic_term.academic_term.start_date
+  module:
+    - datetime
+    - ewp_academic_term
+    - ewp_core
+id: academic_term.academic_term.default
+targetEntityType: academic_term
+bundle: academic_term
+mode: default
+content:
+  academic_year_id:
+    type: string_textfield
+    weight: -19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  ewp_academic_term_id:
+    type: string_textfield
+    weight: -18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  display_name:
+    weight: -17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: ewp_string_lang_default
+    region: content
+  end_date:
+    weight: -15
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  start_date:
+    weight: -16
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  label:
+    type: string_textfield
+    weight: -20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: b0e9ccab-cdca-4a3b-8892-af3d22f6d3de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.academic_term.display_name
+  module:
+    - ewp_academic_term
+    - ewp_core
+id: academic_term.academic_term.display_name
+field_name: display_name
+entity_type: academic_term
+bundle: academic_term
+label: 'Display name'
+description: 'The name of the academic term, formatted in a way if should be displayed to the users. Based on this name, the users should be able to uniquely identify which term it refers to. For example, "Winter Trimester 2010/2011".'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: ewp_string_lang

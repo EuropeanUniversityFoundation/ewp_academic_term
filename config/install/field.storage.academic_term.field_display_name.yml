@@ -1,0 +1,20 @@
+uuid: 2b85a1de-aac2-40f5-b9d0-ce837cf5a463
+langcode: en
+status: true
+dependencies:
+  module:
+    - ewp_academic_term
+    - ewp_core
+id: academic_term.display_name
+field_name: display_name
+entity_type: academic_term
+type: ewp_string_lang
+settings:
+  max_length: '255'
+module: ewp_core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

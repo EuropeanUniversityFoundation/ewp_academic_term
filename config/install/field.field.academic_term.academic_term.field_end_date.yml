@@ -1,0 +1,21 @@
+uuid: 2bcc08b6-d351-439c-a8a9-f2d6bc475e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.academic_term.end_date
+  module:
+    - datetime
+    - ewp_academic_term
+id: academic_term.academic_term.end_date
+field_name: end_date
+entity_type: academic_term
+bundle: academic_term
+label: 'End date'
+description: 'Last day of this term (inclusive).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
