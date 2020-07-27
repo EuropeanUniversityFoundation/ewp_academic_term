@@ -1,0 +1,21 @@
+# Academic academic_term routing definition
+academic_term.settings_tab:
+  route_name: academic_term.settings
+  title: 'Settings'
+  base_route: academic_term.settings
+
+entity.academic_term.canonical:
+  route_name: entity.academic_term.canonical
+  base_route: entity.academic_term.canonical
+  title: 'View'
+
+entity.academic_term.edit_form:
+  route_name: entity.academic_term.edit_form
+  base_route: entity.academic_term.canonical
+  title: 'Edit'
+
+entity.academic_term.delete_form:
+  route_name:  entity.academic_term.delete_form
+  base_route:  entity.academic_term.canonical
+  title: Delete
+  weight: 10

@@ -1,0 +1,6 @@
+entity.academic_term.add_form:
+  route_name: entity.academic_term.add_form
+  title: 'Add Academic Term'
+  appears_on:
+    - academic_term.settings
+    - entity.academic_term.collection

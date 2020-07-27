@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Contains ewp_academic_term.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ewp_academic_term_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ewp_academic_term module.
+    case 'help.page.ewp_academic_term':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Drupal implementation of the EWP Academic Term Type') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ewp_academic_term_theme() {
+  return [
+    'ewp_academic_term' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function ewp_academic_term_theme_suggestions_academic_term(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#academic_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'academic_term__' . $sanitized_view_mode;
+  $suggestions[] = 'academic_term__' . $entity->id();
+  $suggestions[] = 'academic_term__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

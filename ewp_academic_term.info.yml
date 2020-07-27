@@ -1,0 +1,7 @@
+name: 'EWP Academic Term'
+type: module
+description: 'Drupal implementation of the EWP Academic Term Type'
+core: 8.x
+package: 'EWP'
+dependencies:
+  - ewp_core:ewp_core

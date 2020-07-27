@@ -1,0 +1,19 @@
+add academic term entities:
+  title: 'Create new Academic Term entities'
+
+administer academic term entities:
+  title: 'Administer Academic Term entities'
+  description: 'Allow to access the administration form to configure Academic term entities.'
+  restrict access: true
+
+delete academic term entities:
+  title: 'Delete Academic Term entities'
+
+edit academic term entities:
+  title: 'Edit Academic Term entities'
+
+view published academic term entities:
+  title: 'View published Academic Term entities'
+
+view unpublished academic term entities:
+  title: 'View unpublished Academic Term entities'

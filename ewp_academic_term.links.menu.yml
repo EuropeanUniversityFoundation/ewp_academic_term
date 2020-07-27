@@ -1,0 +1,49 @@
+# EWP Academic Term menu parent
+ewp_academic_term.admin:
+  title: 'EWP Academic Term'
+  route_name: ewp_academic_term.admin
+  description: 'Settings for EWP Academic Term'
+  parent: ewp_core.admin
+
+# Academic Term menu items definition
+academic_term.add_form:
+  title: 'Add Academic Term'
+  route_name: entity.academic_term.add_form
+  description: 'Add a new Academic Term entity'
+  parent: ewp_academic_term.admin
+  weight: -10
+
+academic_term.settings:
+  title: 'Academic Term settings'
+  description: 'Configure Academic Term entities'
+  route_name: academic_term.settings
+  parent: ewp_academic_term.admin
+  weight: 1
+
+academic_term.fields:
+  title: 'Manage fields'
+  description: 'Manage the fields of Academic Term entities'
+  route_name: entity.academic_term.field_ui_fields
+  parent: ewp_academic_term.admin
+  weight: 2
+
+academic_term.form:
+  title: 'Manage form display'
+  description: 'Manage the form display of Academic Term entities'
+  route_name: entity.entity_form_display.academic_term.default
+  parent: ewp_academic_term.admin
+  weight: 3
+
+academic_term.display:
+  title: 'Manage display'
+  description: 'Manage the display of Academic Term entities'
+  route_name: entity.entity_view_display.academic_term.default
+  parent: ewp_academic_term.admin
+  weight: 4
+
+academic_term.collection:
+  title: 'Academic Term list'
+  route_name: entity.academic_term.collection
+  description: 'List Academic Term entities'
+  parent: ewp_academic_term.admin
+  weight: 10
