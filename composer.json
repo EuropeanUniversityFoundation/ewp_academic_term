@@ -1,5 +1,5 @@
 {
-  "name": "ewp_academic_term",
+  "name": "euf/ewp_academic_term",
   "type": "drupal-module",
   "description": "Drupal implementation of the EWP Academic Term Type",
   "keywords": [
