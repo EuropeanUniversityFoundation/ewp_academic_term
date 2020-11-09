@@ -7,6 +7,9 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * Implements hook_help().
@@ -79,4 +82,24 @@ function template_preprocess_academic_term(array &$variables) {
   $variables['url'] = $entity->toUrl()->toString();
   //provide the view mode
   $variables['view_mode'] = $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook_jsonapi_entity_filter_access() for 'academic_term'.
+ */
+function ewp_academic_term_jsonapi_entity_filter_access(EntityTypeInterface $entity_type, AccountInterface $account) {
+  return ([
+    JSONAPI_FILTER_AMONG_ALL => AccessResult::allowed()
+  ]);
+}
+
+/**
+ * Implements hook_jsonapi_ENTITY_TYPE_filter_access() for 'academic_term'.
+ */
+function ewp_academic_term_jsonapi_academic_term_filter_access(EntityTypeInterface $entity_type, AccountInterface $account) {
+  return ([
+    JSONAPI_FILTER_AMONG_ALL => AccessResult::allowedIfHasPermission($account, 'view unpublished academic term entities'),
+    JSONAPI_FILTER_AMONG_PUBLISHED => AccessResult::allowedIfHasPermission($account, 'view published academic term entities'),
+    JSONAPI_FILTER_AMONG_OWN => AccessResult::allowedIfHasPermission($account, 'view published academic term entities')
+  ]);
 }
