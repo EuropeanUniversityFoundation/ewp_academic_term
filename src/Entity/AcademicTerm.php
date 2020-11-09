@@ -101,7 +101,7 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
       ->setLabel(t('Label'))
       ->setDescription(t('The internal label of the Academic Term entity.'))
       ->setSettings([
-        'max_length' => 50,
+        'max_length' => 255,
         'text_processing' => 0,
       ])
       ->setDefaultValue('')
