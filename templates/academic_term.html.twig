@@ -1,21 +1,33 @@
 {#
 /**
- * @file term.html.twig
+ * @file academic_term.html.twig
  * Default theme implementation to present Academic term data.
  *
  * This template is used when viewing Academic term pages.
  *
- *
  * Available variables:
- * - content: A list of content items. Use 'content' to print all content, or
+ * - content: A list of content items. Use 'content' to print all content,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - label: the label of the entity.
+ * - url: Direct URL of the current entity.
+ * - view_mode: View mode; for example, "teaser" or "full".
  * - attributes: HTML attributes for the container element.
  *
- * @see template_preprocess_term()
+ * @see template_preprocess_academic_term()
  *
  * @ingroup themeable
  */
 #}
-<div{{ attributes.addClass('academic_term') }}>
+{%
+  set classes = [
+    'academic_term',
+    view_mode ? 'academic_term--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
   {% if content %}
     {{- content -}}
   {% endif %}

@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Render\Element;
 
 /**
  * Implements hook_help().
@@ -26,10 +27,16 @@ function ewp_academic_term_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function ewp_academic_term_theme() {
+function ewp_academic_term_theme($existing, $type, $theme, $path) {
   return [
     'ewp_academic_term' => [
       'render element' => 'children',
+    ],
+    'academic_term' => [                      // the entity id
+      'path' => $path . '/templates',         // template directory in module or theme
+      'template'  => 'academic_term',         // defines base template as /academic_term.html.twig
+      'render element' => 'elements',         // Theme API call to define the container of the entity in the render array
+                                              // The entity will be prefixed with a hash sign as ['elements']['#academic_term']
     ],
   ];
 }
@@ -46,4 +53,30 @@ function ewp_academic_term_theme_suggestions_academic_term(array $variables) {
   $suggestions[] = 'academic_term__' . $entity->id();
   $suggestions[] = 'academic_term__' . $entity->id() . '__' . $sanitized_view_mode;
   return $suggestions;
+}
+
+/**
+ * Prepares variables for Academic Term templates.
+ *
+ * Default template: academic_term.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the user information and any
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_academic_term(array &$variables) {
+  // Helpful $content variable for templates.
+  $variables['content'] = [];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+  /** @var AcademicTermInterface $entity */
+  $entity = $variables['elements']['#academic_term'];
+  //provide the label
+  $variables['label'] = $entity->label();
+  //provide the alias
+  $variables['url'] = $entity->toUrl()->toString();
+  //provide the view mode
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
 }
