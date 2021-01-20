@@ -17,3 +17,7 @@ view published academic term entities:
 
 view unpublished academic term entities:
   title: 'View unpublished Academic Term entities'
+
+access academic term entities overview:
+  title: 'Access the Academic Terms overview page'
+  description: 'Should be combined with Access the Content overview page.'

@@ -28,7 +28,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'administer academic term entities'
+          perm: 'access academic term entities overview'
       cache:
         type: tag
         options: {  }
