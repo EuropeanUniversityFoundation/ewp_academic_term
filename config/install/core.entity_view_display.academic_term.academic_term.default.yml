@@ -9,6 +9,9 @@ dependencies:
     - datetime
     - ewp_academic_term
     - ewp_core
+  enforced:
+    module:
+      - ewp_academic_term
 id: academic_term.academic_term.default
 targetEntityType: academic_term
 bundle: academic_term

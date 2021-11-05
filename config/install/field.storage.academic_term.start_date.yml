@@ -4,6 +4,9 @@ dependencies:
   module:
     - datetime
     - ewp_academic_term
+  enforced:
+    module:
+      - ewp_academic_term
 id: academic_term.start_date
 field_name: start_date
 entity_type: academic_term

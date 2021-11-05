@@ -6,6 +6,9 @@ dependencies:
   module:
     - ewp_academic_term
     - ewp_core
+  enforced:
+    module:
+      - ewp_academic_term
 id: academic_term.academic_term.display_name
 field_name: display_name
 entity_type: academic_term

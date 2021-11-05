@@ -11,6 +11,9 @@ dependencies:
     - ewp_academic_term
     - ewp_core
     - user
+  enforced:
+    module:
+      - ewp_academic_term
 id: ewp_academic_term_admin
 label: 'EWP Academic Term administration'
 module: views
