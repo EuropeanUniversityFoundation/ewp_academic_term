@@ -34,7 +34,7 @@ class AcademicTermForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    /* @var \Drupal\ewp_academic_term\Entity\AcademicTerm $entity */
+    /** @var \Drupal\ewp_academic_term\Entity\AcademicTerm $entity */
     $form = parent::buildForm($form, $form_state);
 
     return $form;
