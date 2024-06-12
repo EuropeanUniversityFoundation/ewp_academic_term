@@ -21,7 +21,7 @@ use Drupal\Core\Render\Element;
  */
 function template_preprocess_academic_term(array &$variables) {
   // Fetch AcademicTerm Entity Object.
-  $term = $variables['elements']['#academic_term'];
+  // $term = $variables['elements']['#academic_term'];
 
   // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {

@@ -6,7 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class AcademicTermSettingsForm.
+ * Settings form for the Academic Term entity.
  *
  * @ingroup ewp_academic_term
  */

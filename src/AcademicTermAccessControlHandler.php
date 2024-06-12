@@ -28,7 +28,6 @@ class AcademicTermAccessControlHandler extends EntityAccessControlHandler {
           return AccessResult::allowedIfHasPermission($account, 'view unpublished academic term entities');
         }
 
-
         return AccessResult::allowedIfHasPermission($account, 'view published academic term entities');
 
       case 'update':
@@ -50,6 +49,5 @@ class AcademicTermAccessControlHandler extends EntityAccessControlHandler {
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     return AccessResult::allowedIfHasPermission($account, 'add academic term entities');
   }
-
 
 }

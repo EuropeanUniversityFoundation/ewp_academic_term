@@ -35,11 +35,10 @@ function ewp_academic_term_theme($existing, $type, $theme, $path) {
     'ewp_academic_term' => [
       'render element' => 'children',
     ],
-    'academic_term' => [                      // the entity id
-      'path' => $path . '/templates',         // template directory in module or theme
-      'template'  => 'academic_term',         // defines base template as /academic_term.html.twig
-      'render element' => 'elements',         // Theme API call to define the container of the entity in the render array
-                                              // The entity will be prefixed with a hash sign as ['elements']['#academic_term']
+    'academic_term' => [
+      'path' => $path . '/templates',
+      'template'  => 'academic_term',
+      'render element' => 'elements',
     ],
   ];
 }
@@ -76,11 +75,11 @@ function template_preprocess_academic_term(array &$variables) {
   }
   /** @var AcademicTermInterface $entity */
   $entity = $variables['elements']['#academic_term'];
-  //provide the label
+  // provide the label
   $variables['label'] = $entity->label();
-  //provide the alias
+  // provide the alias
   $variables['url'] = $entity->toUrl()->toString();
-  //provide the view mode
+  // provide the view mode
   $variables['view_mode'] = $variables['elements']['#view_mode'];
 }
 
@@ -89,7 +88,7 @@ function template_preprocess_academic_term(array &$variables) {
  */
 function ewp_academic_term_jsonapi_entity_filter_access(EntityTypeInterface $entity_type, AccountInterface $account) {
   return ([
-    JSONAPI_FILTER_AMONG_ALL => AccessResult::allowed()
+    JSONAPI_FILTER_AMONG_ALL => AccessResult::allowed(),
   ]);
 }
 
@@ -100,6 +99,6 @@ function ewp_academic_term_jsonapi_academic_term_filter_access(EntityTypeInterfa
   return ([
     JSONAPI_FILTER_AMONG_ALL => AccessResult::allowedIfHasPermission($account, 'view unpublished academic term entities'),
     JSONAPI_FILTER_AMONG_PUBLISHED => AccessResult::allowedIfHasPermission($account, 'view published academic term entities'),
-    JSONAPI_FILTER_AMONG_OWN => AccessResult::allowedIfHasPermission($account, 'view published academic term entities')
+    JSONAPI_FILTER_AMONG_OWN => AccessResult::allowedIfHasPermission($account, 'view published academic term entities'),
   ]);
 }

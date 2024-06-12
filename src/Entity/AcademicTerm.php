@@ -138,10 +138,11 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setPropertyConstraints('value', [
-           'Regex' => [
-             'pattern' => '/[0-9]{4}\/[0-9]{4}/',
-             'message' => 'Allowed format is 2010/2011',
-           ]])
+        'Regex' => [
+          'pattern' => '/[0-9]{4}\/[0-9]{4}/',
+          'message' => 'Allowed format is 2010/2011',
+        ],
+      ])
       ->setRequired(TRUE);
 
     $fields['ewp_academic_term_id'] = BaseFieldDefinition::create('string')
@@ -164,11 +165,13 @@ class AcademicTerm extends ContentEntityBase implements AcademicTermInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setPropertyConstraints('value', [
-           'Regex' => [
-             'pattern' => '/[0-9]{4}\/[0-9]{4}\-[1-9]\/[1-9]/',
-             'message' => 'Allowed format is 2010/2011-1/2',
-           ]]);
+        'Regex' => [
+          'pattern' => '/[0-9]{4}\/[0-9]{4}\-[1-9]\/[1-9]/',
+          'message' => 'Allowed format is 2010/2011-1/2',
+        ],
+      ]);
 
+    /** @disregard P1013 */
     $fields['status']
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',

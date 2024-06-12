@@ -26,7 +26,7 @@ class AcademicTermListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var \Drupal\ewp_academic_term\Entity\AcademicTerm $entity */
+    /** @var \Drupal\ewp_academic_term\Entity\AcademicTerm $entity */
     $row['id'] = $entity->id();
     $row['label'] = Link::createFromRoute(
       $entity->label(),
